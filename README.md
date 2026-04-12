@@ -1,66 +1,96 @@
-# Student Portfolio Template (Designer Beginner Ver.)
+# 김민지 디자이너 포트폴리오 (Next.js 데모)
 
-실무 프로젝트가 아직 없는 초보 디자이너형 수강생을 위한 **학습용 포트폴리오 템플릿**입니다.
+실무 경력이 없어도 **디자인 감각과 방향성**을 자연스럽게 보여줄 수 있도록 만든,
+초보 수강생용 원페이지 포트폴리오 템플릿입니다.
 
-Next.js App Router + TypeScript + Tailwind CSS 기준으로 구성되어 있으며,
-텍스트만 수정해도 자연스럽고 완성도 있는 포트폴리오를 빠르게 만들 수 있습니다.
+- Next.js App Router
+- TypeScript
+- Tailwind CSS
+- 반응형 웹
 
-## 섹션 구성
+---
 
-- Home
-- About
-- Projects
-- Visual Keywords
-- Strength
-- Contact
+## 1) 실행 방법
 
-## 어디를 수정하면 되나요?
-
-초보자도 쉽게 수정할 수 있도록 주요 문구와 프로젝트 데이터를 한 파일로 분리했습니다.
-
-### 1) 기본 정보/문구 수정
-
-`data/siteContent.ts` 파일에서 아래 항목을 바꾸면 전체 사이트에 반영됩니다.
-
-- 이름, 한 줄 소개, 스타일
-- 관심 분야
-- 배우는 도구
-- 앞으로 만들고 싶은 작업
-- 연락처
-- 시각 키워드
-- 강점
-
-### 2) 프로젝트 수정
-
-동일한 `data/siteContent.ts` 안의 `projects` 배열을 수정하세요.
-
-각 프로젝트는 아래 구조로 되어 있습니다.
-
-- `title`: 프로젝트 제목
-- `description`: 프로젝트 의도/설명
-- `designPoint`: 디자인 포인트
-- `tools`: 사용 도구 배열
-
-원하는 만큼 프로젝트를 추가/삭제할 수 있습니다.
-
-### 3) 섹션 구조 수정
-
-- `app/page.tsx`: 섹션 조립만 담당
-- `components/*`: 섹션별 UI 컴포넌트
-
-## 디자인 방향
-
-- 미니멀하고 세련된 레이아웃
-- 넓은 여백
-- 카드형 프로젝트 구성
-- 명확한 타이포 대비
-- 모바일 반응형 구성
-
-## 실행
+아래 순서대로 실행하면 됩니다.
 
 ```bash
 npm install
 npm run dev
 ```
 
-브라우저에서 `http://localhost:3000` 접속 후 확인할 수 있습니다.
+브라우저에서 `http://localhost:3000` 접속 후 확인하세요.
+
+배포 전 빌드 확인:
+
+```bash
+npm run build
+```
+
+---
+
+## 2) 프로젝트 구조
+
+```text
+app/
+  layout.tsx
+  globals.css
+  page.tsx
+components/
+  NavBar.tsx
+  HeroSection.tsx
+  AboutSection.tsx
+  ProjectsSection.tsx
+  VisualKeywordsSection.tsx
+  StrengthSection.tsx
+  ContactSection.tsx
+  Footer.tsx
+data/
+  siteContent.ts
+```
+
+---
+
+## 3) 어디를 수정하면 되나요?
+
+모든 텍스트 데이터는 **`data/siteContent.ts` 하나**에서 관리합니다.
+처음 사용하는 분은 이 파일만 수정해도 충분합니다.
+
+### 이름/소개 수정 위치
+
+- `siteContent.hero`
+- `siteContent.about`
+
+### 프로젝트 카드 수정 위치
+
+- `siteContent.projects` 배열
+- 프로젝트를 추가할 때는 기존 객체 형식을 복사해서 붙여넣으면 됩니다.
+
+### 키워드 수정 위치
+
+- `siteContent.keywords`
+
+### 연락처 수정 위치
+
+- `siteContent.contact`
+
+---
+
+## 4) 초보자를 위한 수정 팁
+
+1. 먼저 `data/siteContent.ts`에서 텍스트만 본인 정보로 교체합니다.
+2. `npm run dev` 상태에서 저장하면 화면이 자동 갱신됩니다.
+3. 문구 수정이 끝나면 `npm run build`로 최종 오류 여부를 확인하세요.
+
+---
+
+## 5) 섹션 구성
+
+- 홈 (Hero)
+- 소개 (About)
+- 프로젝트 (Projects)
+- 키워드 (Visual Keywords)
+- 강점 (My Strengths)
+- 연락처 (Contact)
+
+상단 메뉴는 sticky 상태로 고정되며, 클릭 시 각 섹션으로 스크롤 이동합니다.

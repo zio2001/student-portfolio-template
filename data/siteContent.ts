@@ -1,83 +1,100 @@
-export const profile = {
-  name: "김민지",
-  oneLineIntro: "브랜드의 분위기를 시각으로 번역하는 디자이너를 꿈꾸고 있습니다.",
-  designFields: ["포스터 디자인", "브랜딩", "SNS 콘텐츠"],
-  style: "미니멀하고 선명한 디자인",
-  mainCopy:
-    "불필요한 요소는 덜어내고, 메시지가 가장 먼저 보이도록 설계합니다. 아직 배우는 단계이지만, 화면 안에서 감정과 정보를 균형 있게 담아내는 연습을 꾸준히 이어가고 있습니다.",
-  bio:
-    "안녕하세요, 디자이너를 준비 중인 김민지입니다. 작은 레이아웃 연습부터 시작해 브랜드 톤을 정리하는 작업까지, ‘왜 이 구성이 더 잘 읽히는지’를 스스로 설명할 수 있는 디자인을 만들고 싶습니다.",
-  currentFocus:
-    "현재는 포스터 디자인, 브랜딩, SNS 콘텐츠를 중심으로 실습하며 시각 언어를 정리하고 있습니다. 단순히 예쁘게 보이는 결과보다 전달력이 분명한 결과물을 목표로 하고 있습니다.",
-  tools: ["Figma", "Canva", "Photoshop"],
-  futureGoal:
-    "앞으로는 나만의 브랜드 포트폴리오를 구축해, 하나의 컨셉이 다양한 매체에서 일관되게 확장되는 작업을 만들고 싶습니다.",
-  learningMindset:
-    "아직 배우는 중이지만, 관찰하고 기록하고 개선하는 과정을 통해 감각과 방향성을 차근차근 쌓아가고 있습니다.",
-  email: "minji.design@example.com",
-  instagram: "instagram.com/minji.visual",
-  behance: "behance.net/minjidesign",
-  github: "github.com/minji-portfolio",
+export const siteContent = {
+  nav: [
+    { label: "홈", href: "#home" },
+    { label: "소개", href: "#about" },
+    { label: "프로젝트", href: "#projects" },
+    { label: "키워드", href: "#visual-keywords" },
+    { label: "강점", href: "#strength" },
+    { label: "연락처", href: "#contact" },
+  ],
+  hero: {
+    name: "김민지",
+    headingTop: "안녕하세요,",
+    headingBottom: "저는 김민지입니다",
+    subtitle: "감각과 구조를 함께 고민하는 디자이너",
+    description: [
+      "브랜드 포스터, SNS 콘텐츠, 자기소개 웹페이지 시안 등 다양한 작업을 통해",
+      "시각적인 표현과 정보 전달의 균형을 연습하고 있습니다.",
+      "깔끔한 구성과 분위기 있는 색감, 사용자가 보기 편한 레이아웃에 관심이 많습니다.",
+    ],
+    buttons: [
+      { label: "프로젝트 보기", href: "#projects" },
+      { label: "연락하기", href: "#contact" },
+    ],
+  },
+  about: {
+    title: "About Me",
+    description: [
+      "저는 시각적으로 보기 좋은 결과물뿐 아니라,",
+      "메시지가 더 잘 전달되는 구조를 함께 고민하는 디자이너를 목표로 하고 있습니다.",
+      "포스터, 카드뉴스, 자기소개 웹페이지 시안 등 다양한 학습형 프로젝트를 통해",
+      "디자인 감각과 정보 구성 능력을 함께 키워가고 있습니다.",
+      "아직 배우는 과정에 있지만, 저만의 시각 언어와 작업 스타일을 만들어가는 중입니다.",
+    ],
+    details: [
+      { label: "관심 분야", value: "포스터 디자인, 브랜딩, SNS 콘텐츠 디자인" },
+      { label: "배우는 도구", value: "Figma, Canva, Photoshop, Illustrator" },
+      { label: "추구하는 스타일", value: "미니멀하고 선명한 디자인" },
+      { label: "목표", value: "나만의 브랜드 포트폴리오 만들기" },
+    ],
+  },
+  projects: [
+    {
+      title: "브랜드 포스터 디자인",
+      description:
+        "가상의 브랜드를 설정하고, 브랜드 이미지를 전달할 수 있는 메인 포스터를 디자인했습니다.",
+      designPoint:
+        "강한 타이포그래피와 컬러 대비를 활용해 시선을 끌 수 있도록 구성했습니다.",
+      tools: ["Figma", "Photoshop"],
+    },
+    {
+      title: "자기소개 웹페이지 시안",
+      description:
+        "나를 소개하는 원페이지 웹사이트를 기획하고, 정보 흐름과 레이아웃 중심으로 시안을 제작했습니다.",
+      designPoint:
+        "첫 화면에서 인상이 잘 전달되도록 타이틀, 소개 문구, 버튼 구조를 정리했습니다.",
+      tools: ["Figma"],
+    },
+    {
+      title: "SNS 카드뉴스 디자인",
+      description:
+        "정보 전달형 카드뉴스를 제작하며, 짧은 문장과 이미지가 균형 있게 보이도록 구성했습니다.",
+      designPoint:
+        "모바일 환경에서 가독성이 좋도록 글자 크기와 여백을 세심하게 조정했습니다.",
+      tools: ["Canva", "Figma"],
+    },
+    {
+      title: "행사 홍보 배너 디자인",
+      description:
+        "이벤트 성격에 맞는 분위기를 표현하기 위해 배너형 레이아웃과 강조 요소를 실험했습니다.",
+      designPoint:
+        "한눈에 핵심 정보가 보이도록 계층 구조를 분명하게 설정했습니다.",
+      tools: ["Illustrator", "Photoshop"],
+    },
+  ],
+  keywords: ["Minimal", "Clean", "Modern", "Soft", "Bold", "Balanced"],
+  strengths: [
+    {
+      title: "시각적 정리 능력",
+      description:
+        "복잡한 내용을 보기 쉽게 정리하고, 핵심이 잘 보이도록 구성하는 데 강점이 있습니다.",
+    },
+    {
+      title: "색감과 분위기 표현",
+      description:
+        "전체적인 분위기를 고려해 색상과 여백을 조절하며, 깔끔한 톤을 만드는 것을 좋아합니다.",
+    },
+    {
+      title: "트렌드에 대한 관심",
+      description:
+        "최신 디자인 흐름을 꾸준히 참고하며, 나만의 스타일로 적용해보는 연습을 하고 있습니다.",
+    },
+  ],
+  contact: {
+    title: "Contact",
+    description: "디자인과 브랜딩에 관심이 많으며, 새로운 작업 기회를 통해 더 성장하고 싶습니다.",
+    email: "designer.minji@example.com",
+    instagram: "https://instagram.com/minji.design",
+    behance: "https://behance.net/minji-design",
+  },
 };
-
-export const projects = [
-  {
-    title: "Lumen 브랜드 포스터 디자인",
-    description:
-      "가상의 라이프스타일 브랜드 ‘Lumen’을 설정하고, 브랜드 첫인상을 결정하는 론칭 포스터를 제작했습니다. 간결한 카피와 강한 타이포 대비를 통해 브랜드의 정체성을 한 장 안에서 또렷하게 전달하는 데 집중했습니다.",
-    designPoint:
-      "여백을 넉넉하게 사용해 시선을 핵심 메시지로 유도하고, 모노톤 기반 색상 위에 포인트 컬러를 최소한으로 배치해 세련된 분위기를 완성했습니다.",
-    tools: ["Figma", "Photoshop"],
-  },
-  {
-    title: "자기소개 웹페이지 시안",
-    description:
-      "디자이너 지망생의 첫인상을 전달하는 원페이지 웹 시안을 기획했습니다. 사용자가 빠르게 핵심 정보를 읽을 수 있도록 정보 우선순위를 구조화하고, 모바일에서도 흐름이 끊기지 않게 반응형 레이아웃을 설계했습니다.",
-    designPoint:
-      "타이틀-본문-보조 정보의 타이포 위계를 명확히 설정해 가독성을 높였고, 카드형 섹션으로 내용을 분리해 스크롤 피로도를 줄였습니다.",
-    tools: ["Figma", "Canva"],
-  },
-  {
-    title: "SNS 카드뉴스 디자인",
-    description:
-      "디자인 학습 팁을 전달하는 5장 분량 카드뉴스를 가정해 제작했습니다. 장수별 정보량을 조절해 ‘첫 장에서 관심을 끌고 마지막 장에서 행동을 유도하는’ 흐름을 구성했습니다.",
-    designPoint:
-      "한눈에 읽히는 레이아웃을 위해 아이콘과 텍스트 블록의 비율을 고정하고, 시리즈 전체에 동일한 컬러 룰과 그리드 시스템을 적용했습니다.",
-    tools: ["Canva", "Photoshop"],
-  },
-  {
-    title: "행사 홍보 배너 디자인",
-    description:
-      "가상의 디자인 워크숍 홍보를 위한 온라인 배너를 제작했습니다. 빠르게 스쳐 지나가는 환경에서도 행사명, 일정, 신청 CTA가 즉시 보이도록 정보 구조를 단순화했습니다.",
-    designPoint:
-      "강조가 필요한 텍스트에만 굵기와 색 대비를 적용해 시선을 분산시키지 않았고, 배경 그래픽은 최소한으로 사용해 메시지 전달력을 높였습니다.",
-    tools: ["Figma", "Canva", "Photoshop"],
-  },
-];
-
-export const visualKeywords = [
-  "Minimal",
-  "Clean",
-  "Bold",
-  "Modern",
-  "Soft Contrast",
-  "Playful Detail",
-];
-
-export const strengths = [
-  {
-    title: "시각적 정리 능력",
-    description:
-      "복잡한 정보를 우선순위에 맞춰 재배치하고, 한눈에 읽히는 화면 구조로 정리합니다.",
-  },
-  {
-    title: "색감과 분위기 표현",
-    description:
-      "콘셉트에 맞는 색 조합을 빠르게 탐색해 톤앤무드를 일관되게 유지하는 데 강점이 있습니다.",
-  },
-  {
-    title: "트렌드 리서치 습관",
-    description:
-      "최신 레퍼런스를 단순 모방하지 않고, 프로젝트 목적에 맞게 해석해 적용하는 연습을 지속하고 있습니다.",
-  },
-];

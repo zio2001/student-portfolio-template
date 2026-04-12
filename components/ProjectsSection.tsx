@@ -1,37 +1,40 @@
-import { projects } from "../data/siteContent";
+import { siteContent } from "@/data/siteContent";
 
 export default function ProjectsSection() {
   return (
-    <section id="projects" className="grid gap-8 border-b border-zinc-200 py-16 md:py-24">
-      <div className="space-y-3">
-        <h2 className="text-3xl font-semibold text-zinc-950 md:text-4xl">Projects</h2>
-        <p className="max-w-3xl text-base leading-relaxed text-zinc-600 md:text-lg">
-          아직 실무 프로젝트 경험은 없지만, 목적과 컨셉을 설정한 학습용 작업으로 시각적 사고 방식과
-          디자인 방향성을 정리하고 있습니다.
+    <section id="projects" className="scroll-mt-24 border-b border-zinc-200 py-16 md:py-24">
+      <div className="mb-8">
+        <h2 className="text-3xl font-semibold tracking-tight text-zinc-950 md:text-4xl">Projects</h2>
+        <p className="mt-4 max-w-3xl leading-relaxed text-zinc-600">
+          실무 경험 전 단계에서도 감각과 방향성을 보여줄 수 있도록 학습형 프로젝트를 실제 포트폴리오
+          형식으로 정리했습니다.
         </p>
       </div>
 
       <div className="grid gap-6 md:grid-cols-2">
-        {projects.map((project) => (
+        {siteContent.projects.map((project, index) => (
           <article
             key={project.title}
-            className="overflow-hidden rounded-2xl border border-zinc-200 bg-white shadow-sm"
+            className="overflow-hidden rounded-3xl border border-zinc-200 bg-white shadow-soft transition hover:-translate-y-1"
           >
-            <div className="flex h-44 items-center justify-center bg-gradient-to-br from-zinc-100 via-zinc-50 to-zinc-200 text-xs tracking-[0.2em] text-zinc-500">
-              IMAGE PLACEHOLDER
+            <div className="relative flex h-44 items-center justify-center overflow-hidden bg-gradient-to-br from-zinc-100 via-sky-50 to-zinc-200">
+              <div className="absolute inset-0 bg-grain bg-[length:10px_10px]" />
+              <span className="relative text-xs font-semibold tracking-[0.22em] text-zinc-500">
+                PROJECT {index + 1} IMAGE
+              </span>
             </div>
             <div className="space-y-4 p-6">
               <h3 className="text-xl font-semibold text-zinc-900">{project.title}</h3>
-              <p className="text-sm leading-relaxed text-zinc-700">{project.description}</p>
-              <div>
-                <p className="text-xs font-semibold tracking-[0.18em] text-zinc-500">DESIGN POINT</p>
-                <p className="mt-2 text-sm leading-relaxed text-zinc-700">{project.designPoint}</p>
+              <p className="leading-relaxed text-zinc-700">{project.description}</p>
+              <div className="rounded-2xl bg-zinc-50 p-4">
+                <p className="text-xs font-semibold tracking-[0.14em] text-zinc-500">디자인 포인트</p>
+                <p className="mt-1.5 text-sm leading-relaxed text-zinc-700">{project.designPoint}</p>
               </div>
               <div className="flex flex-wrap gap-2">
                 {project.tools.map((tool) => (
                   <span
                     key={tool}
-                    className="rounded-full border border-zinc-300 px-3 py-1 text-xs text-zinc-700"
+                    className="rounded-full border border-zinc-300 bg-white px-3 py-1 text-xs font-medium text-zinc-700"
                   >
                     {tool}
                   </span>

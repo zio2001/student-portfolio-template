@@ -1,0 +1,21 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+:root {
+  color-scheme: light;
+}
+
+html {
+  scroll-behavior: smooth;
+}
+
+body {
+  @apply bg-zinc-50 text-zinc-900 antialiased;
+  background-image: radial-gradient(circle at 20% 20%, rgba(148, 163, 184, 0.12), transparent 45%),
+    radial-gradient(circle at 80% 0%, rgba(125, 211, 252, 0.12), transparent 40%);
+}
+
+::selection {
+  @apply bg-zinc-900 text-white;
+}

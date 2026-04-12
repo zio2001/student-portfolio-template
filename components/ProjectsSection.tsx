@@ -2,43 +2,40 @@ import { siteContent } from "@/data/siteContent";
 
 export default function ProjectsSection() {
   return (
-    <section id="projects" className="scroll-mt-24 border-b border-zinc-200 py-16 md:py-24">
-      <div className="mb-8">
-        <h2 className="text-3xl font-semibold tracking-tight text-zinc-950 md:text-4xl">Projects</h2>
-        <p className="mt-4 max-w-3xl leading-relaxed text-zinc-600">
-          실무 경험 전 단계에서도 감각과 방향성을 보여줄 수 있도록 학습형 프로젝트를 실제 포트폴리오
-          형식으로 정리했습니다.
-        </p>
-      </div>
-
-      <div className="grid gap-6 md:grid-cols-2">
-        {siteContent.projects.map((project, index) => (
+    <section id="portfolio" className="pb-20">
+      <div className="grid gap-4 md:grid-cols-2">
+        {siteContent.projects.map((project) => (
           <article
             key={project.title}
-            className="overflow-hidden rounded-3xl border border-zinc-200 bg-white shadow-soft transition hover:-translate-y-1"
+            className={`grid min-h-[285px] overflow-hidden border border-zinc-300 bg-white ${
+              project.wide ? "md:col-span-2 md:grid-cols-[1.4fr_1fr]" : "grid-cols-2"
+            }`}
           >
-            <div className="relative flex h-44 items-center justify-center overflow-hidden bg-gradient-to-br from-zinc-100 via-sky-50 to-zinc-200">
-              <div className="absolute inset-0 bg-grain bg-[length:10px_10px]" />
-              <span className="relative text-xs font-semibold tracking-[0.22em] text-zinc-500">
-                PROJECT {index + 1} IMAGE
-              </span>
-            </div>
-            <div className="space-y-4 p-6">
-              <h3 className="text-xl font-semibold text-zinc-900">{project.title}</h3>
-              <p className="leading-relaxed text-zinc-700">{project.description}</p>
-              <div className="rounded-2xl bg-zinc-50 p-4">
-                <p className="text-xs font-semibold tracking-[0.14em] text-zinc-500">디자인 포인트</p>
-                <p className="mt-1.5 text-sm leading-relaxed text-zinc-700">{project.designPoint}</p>
-              </div>
-              <div className="flex flex-wrap gap-2">
-                {project.tools.map((tool) => (
+            <div className={`p-7 ${project.align === "right" ? "order-2" : "order-1"}`}>
+              <p className="text-4xl font-bold text-zinc-900">{project.title}</p>
+              <p className="mt-2 text-2xl font-semibold text-fuchsia-700">{project.subtitle}</p>
+              <p className="mt-5 text-base leading-relaxed text-zinc-700">{project.description}</p>
+              <div className="mt-7 flex flex-wrap items-center gap-2">
+                {project.tags.map((tag) => (
                   <span
-                    key={tool}
-                    className="rounded-full border border-zinc-300 bg-white px-3 py-1 text-xs font-medium text-zinc-700"
+                    key={tag}
+                    className="rounded-md border border-zinc-400 px-2 py-1 text-xs font-semibold text-zinc-700"
                   >
-                    {tool}
+                    {tag}
                   </span>
                 ))}
+              </div>
+              <p className="mt-5 text-xs text-zinc-500">{project.date}</p>
+            </div>
+
+            <div
+              className={`relative min-h-[220px] ${project.align === "right" ? "order-1" : "order-2"}`}
+              style={{ backgroundColor: project.accent }}
+            >
+              <div className="absolute inset-0 grid place-items-center bg-gradient-to-br from-white/10 to-black/10">
+                <span className="rounded-full border border-white/70 px-4 py-1.5 text-xs font-medium tracking-[0.18em] text-white">
+                  PROJECT PREVIEW
+                </span>
               </div>
             </div>
           </article>

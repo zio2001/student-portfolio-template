@@ -1,35 +1,21 @@
-# 김민지 디자이너 포트폴리오 (Next.js 데모)
+# DAY BY DAY 포트폴리오 홈페이지
 
-실무 경력이 없어도 **디자인 감각과 방향성**을 자연스럽게 보여줄 수 있도록 만든,
-초보 수강생용 원페이지 포트폴리오 템플릿입니다.
+참고 레이아웃(스크린샷 기준)의 분위기를 반영해 제작한 **Next.js App Router + TypeScript + Tailwind CSS** 포트폴리오 템플릿입니다.
 
-- Next.js App Router
-- TypeScript
-- Tailwind CSS
-- 반응형 웹
-
----
-
-## 1) 실행 방법
-
-아래 순서대로 실행하면 됩니다.
+## 실행 방법
 
 ```bash
 npm install
 npm run dev
 ```
 
-브라우저에서 `http://localhost:3000` 접속 후 확인하세요.
-
-배포 전 빌드 확인:
+빌드 확인:
 
 ```bash
 npm run build
 ```
 
----
-
-## 2) 프로젝트 구조
+## 주요 파일 구조
 
 ```text
 app/
@@ -40,57 +26,33 @@ components/
   NavBar.tsx
   HeroSection.tsx
   AboutSection.tsx
-  ProjectsSection.tsx
-  VisualKeywordsSection.tsx
-  StrengthSection.tsx
+  ServicesSection.tsx
+  CareerSection.tsx
   ContactSection.tsx
+  Reveal.tsx
   Footer.tsx
 data/
   siteContent.ts
 ```
 
----
+## 수정 포인트
 
-## 3) 어디를 수정하면 되나요?
+### 1) 브랜드/문구/링크 변경
+- `data/siteContent.ts`
+  - 사이트명, 이름, 역할, 소개문구
+  - 메뉴 항목
+  - 버튼 링크(포트폴리오, 자료실, 다운로드)
+  - 서비스/경력/연락처 데이터
 
-모든 텍스트 데이터는 **`data/siteContent.ts` 하나**에서 관리합니다.
-처음 사용하는 분은 이 파일만 수정해도 충분합니다.
+### 2) 레이아웃 및 스타일 조정
+- `app/page.tsx`: 섹션 순서
+- `app/globals.css`: 공통 입력폼/전역 스타일
+- `components/*.tsx`: 각 섹션 카드 및 UI
 
-### 이름/소개 수정 위치
+## 구현 포인트
 
-- `siteContent.hero`
-- `siteContent.about`
-
-### 프로젝트 카드 수정 위치
-
-- `siteContent.projects` 배열
-- 프로젝트를 추가할 때는 기존 객체 형식을 복사해서 붙여넣으면 됩니다.
-
-### 키워드 수정 위치
-
-- `siteContent.keywords`
-
-### 연락처 수정 위치
-
-- `siteContent.contact`
-
----
-
-## 4) 초보자를 위한 수정 팁
-
-1. 먼저 `data/siteContent.ts`에서 텍스트만 본인 정보로 교체합니다.
-2. `npm run dev` 상태에서 저장하면 화면이 자동 갱신됩니다.
-3. 문구 수정이 끝나면 `npm run build`로 최종 오류 여부를 확인하세요.
-
----
-
-## 5) 섹션 구성
-
-- 홈 (Hero)
-- 소개 (About)
-- 프로젝트 (Projects)
-- 키워드 (Visual Keywords)
-- 강점 (My Strengths)
-- 연락처 (Contact)
-
-상단 메뉴는 sticky 상태로 고정되며, 클릭 시 각 섹션으로 스크롤 이동합니다.
+- 원페이지 스크롤 구조 (Home, About, Services, Career, Contact)
+- 상단 **고정형(sticky) 네비게이션**
+- 모바일 **햄버거 메뉴**
+- `framer-motion` 기반 스크롤 등장 애니메이션
+- 카드/라운드/그림자/여백 강화로 실제 서비스 페이지 수준의 밀도 반영
